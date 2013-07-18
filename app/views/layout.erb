@@ -12,9 +12,7 @@
 <body>
 
   <nav>
-
     <div class="brand"><a href="/">User Authentication</a></div>
-
     <ul>
       <% if current_user %>
         <li><a id="sign-out" href="/sessions/<%= current_user.id %>">Sign Out</a></li>
@@ -23,7 +21,6 @@
         <li><a href="/users/new">Sign Up</a></li>
       <% end %>
     </ul>
-
   </nav>
 
   <%= yield %>
