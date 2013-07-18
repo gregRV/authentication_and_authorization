@@ -11,6 +11,7 @@ end
 #=== USERS
 # sign-up page
 get '/users/new' do
+  @user = User.new
   erb :"users/new"
 end
 
@@ -29,6 +30,7 @@ end
 #=== SESSIONS
 # sign-in page 
 get '/sessions/new' do
+  @user = User.new
   erb :"sessions/new"
 end
 
@@ -46,5 +48,4 @@ end
 # sign-out -- invoked via AJAX
 delete '/sessions/:id' do
   session.clear
-  redirect '/'
 end

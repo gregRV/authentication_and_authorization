@@ -1,6 +1,10 @@
 <div class="container">
   <h1>Sign Up</h1>
 
+  <% if @user.errors %>
+    <div class="errors"><%= @user.errors.full_messages %></div>
+  <% end %>
+
   <form id="sign-up" method="post" action="/users">
     <label class="label" for="name">Name</label>
     <input type="text" name="user[name]" placeholder="e.g., joe" >

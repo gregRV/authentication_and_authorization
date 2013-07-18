@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   include BCrypt
 
   validates_presence_of :name, :email
+  validates_uniqueness_of :email
 
   def password
   	@password ||= Password.new(password_hash)
