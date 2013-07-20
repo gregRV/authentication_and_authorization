@@ -18,12 +18,12 @@ end
 # creates new user and session if validations pass
 post '/users' do
   @user = User.new(params[:user])
-    if @user.save
-      session[:user_id] = @user.id
-      erb :"users/show"
-    else
-      erb :"users/new"
-    end
+  if @user.save
+    session[:user_id] = @user.id
+    erb :"users/show"
+  else
+    erb :"users/new"
+  end
 end
 
 
